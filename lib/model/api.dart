@@ -1,5 +1,7 @@
 class BaseUrl {
-  static String url = "http://192.168.0.8/api_project/";
+  static String url = "http://192.168.100.138/api_project/";
+  static String url1 = "http://192.168.43.38/apps_helpdesk/";
+
   static String urlLogin = url + "api/login.php";
 
   static String urldata_barang = url + "api/data_barang.php";
@@ -21,4 +23,5 @@ class BaseUrl {
   static String urltambah_karyawan = url + "api/tambah_karyawan.php";
   static String urlhapus_karyawan = url + "api/hapus_karyawan.php";
   static String urledit_karyawan = url + "api/edit_karyawan.php";
+  static String urlDataPC = url1 + "api/data_pc.php";
 }

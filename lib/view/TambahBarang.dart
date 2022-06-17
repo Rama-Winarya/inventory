@@ -57,7 +57,19 @@ class _TambahBarangState extends State<TambahBarang> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Color.fromRGBO(244, 244, 244, 1),
-        appBar: AppBar(),
+        appBar: AppBar(
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                child: Text(
+                  "Tambah Data PC",
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+              )
+            ],
+          ),
+        ),
         body: Form(
           key: _key,
           child: ListView(
@@ -81,11 +93,18 @@ class _TambahBarangState extends State<TambahBarang> {
                 onSaved: (e) => id_user = e,
                 decoration: InputDecoration(labelText: "ID User"),
               ),
+              SizedBox(
+                height: 20,
+              ),
               MaterialButton(
+                color: Color(0xff0066cc),
                 onPressed: () {
                   check();
                 },
-                child: Text("Simpan"),
+                child: Text(
+                  "Simpan",
+                  style: TextStyle(color: Colors.white),
+                ),
               )
             ],
           ),

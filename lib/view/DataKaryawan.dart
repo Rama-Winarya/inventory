@@ -145,7 +145,7 @@ class _DataKaryawanState extends State<DataKaryawan> {
                   builder: (context) => new TambahKaryawan(_lihatData)));
         },
         child: Icon(Icons.add),
-        backgroundColor: Color.fromRGBO(255, 82, 48, 1),
+        backgroundColor: Color(0xff0066cc),
       ),
       body: RefreshIndicator(
           onRefresh: _lihatData,

@@ -63,7 +63,19 @@ class _TambahKaryawanState extends State<TambahKaryawan> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Color.fromRGBO(244, 244, 244, 1),
-        appBar: AppBar(),
+        appBar: AppBar(
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                child: Text(
+                  "Tambah Karyawan",
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+              )
+            ],
+          ),
+        ),
         body: Form(
           key: _key,
           child: ListView(
@@ -76,7 +88,7 @@ class _TambahKaryawanState extends State<TambahKaryawan> {
                   }
                 },
                 onSaved: (e) => nama_karyawan = e,
-                decoration: InputDecoration(labelText: "ID PC"),
+                decoration: InputDecoration(labelText: "Nama Karyawan"),
               ),
               TextFormField(
                 validator: (e) {
@@ -123,11 +135,18 @@ class _TambahKaryawanState extends State<TambahKaryawan> {
                 onSaved: (e) => level = e,
                 decoration: InputDecoration(labelText: "level"),
               ),
+              SizedBox(
+                height: 20,
+              ),
               MaterialButton(
+                color: Color(0xff0066cc),
                 onPressed: () {
                   check();
                 },
-                child: Text("Simpan"),
+                child: Text(
+                  "Simpan",
+                  style: TextStyle(color: Colors.white),
+                ),
               )
             ],
           ),

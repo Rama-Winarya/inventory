@@ -65,7 +65,19 @@ class _EditDivisiState extends State<EditDivisi> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(244, 244, 244, 1),
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              child: Text(
+                "Ubah Data Divisi",
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+            )
+          ],
+        ),
+      ),
       body: Form(
         key: _key,
         child: ListView(
@@ -83,11 +95,18 @@ class _EditDivisiState extends State<EditDivisi> {
               onSaved: (e) => nama_divisi = e,
               decoration: InputDecoration(labelText: "Nama Divisi"),
             ),
+            SizedBox(
+              height: 20,
+            ),
             MaterialButton(
+              color: Color(0xff0066cc),
               onPressed: () {
                 check();
               },
-              child: Text("Ubah"),
+              child: Text(
+                "Ubah",
+                style: TextStyle(color: Colors.white),
+              ),
             )
           ],
         ),

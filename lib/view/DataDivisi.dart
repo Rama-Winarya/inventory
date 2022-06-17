@@ -136,7 +136,7 @@ class _DataDivisiState extends State<DataDivisi> {
                   builder: (context) => new TambahDivisi(_lihatData)));
         },
         child: Icon(Icons.add),
-        backgroundColor: Color.fromRGBO(255, 82, 48, 1),
+        backgroundColor: Color(0xff0066cc),
       ),
       body: RefreshIndicator(
           onRefresh: _lihatData,

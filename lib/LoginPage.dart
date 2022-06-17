@@ -132,12 +132,13 @@ class _LoginPageState extends State<LoginPage> {
             child: ListView(
               padding: EdgeInsets.only(top: 90.0, left: 20.0, right: 20.0),
               children: <Widget>[
-                Image.asset('assets/img/logo.png', height: 60, width: 60),
-                Text(
-                  "Inventory Apps",
-                  textAlign: TextAlign.center,
-                  textScaleFactor: 1.2,
-                ),
+                Image.asset('assets/img/inventory.png',
+                    height: 100, width: 100),
+                // Text(
+                //   "Inventory Apps",
+                //   textAlign: TextAlign.center,
+                //   textScaleFactor: 1.2,
+                // ),
                 TextFormField(
                   validator: (e) {
                     if (e!.isEmpty) {
@@ -169,7 +170,13 @@ class _LoginPageState extends State<LoginPage> {
                     check();
                     // print("login");
                   },
-                  child: Text('Login'),
+                  child: Text(
+                    'Login',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
               ],
             ),

@@ -86,7 +86,19 @@ class _EditKaryawanState extends State<EditKaryawan> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(244, 244, 244, 1),
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              child: Text(
+                "Ubah Data Karyawan",
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+            )
+          ],
+        ),
+      ),
       body: Form(
         key: _key,
         child: ListView(
@@ -152,6 +164,19 @@ class _EditKaryawanState extends State<EditKaryawan> {
               onSaved: (e) => username = e,
               decoration: InputDecoration(labelText: "username"),
             ),
+            SizedBox(
+              height: 20,
+            ),
+            MaterialButton(
+              color: Color(0xff0066cc),
+              onPressed: () {
+                check();
+              },
+              child: Text(
+                "Ubah",
+                style: TextStyle(color: Colors.white),
+              ),
+            )
             // TextFormField(
             //  // controller: txtpassword,
             //   validator: (e) {
@@ -164,12 +189,6 @@ class _EditKaryawanState extends State<EditKaryawan> {
             //   onSaved: (e) => password = e,
             //   decoration: InputDecoration(labelText: "Password"),
             // ),
-            MaterialButton(
-              onPressed: () {
-                check();
-              },
-              child: Text("Ubah"),
-            )
           ],
         ),
       ),

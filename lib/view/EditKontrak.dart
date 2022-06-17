@@ -65,7 +65,19 @@ class _EditKontrakState extends State<EditKontrak> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(244, 244, 244, 1),
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            Container(
+              child: Text(
+                "Ubah Data Kontrak",
+                style: TextStyle(color: Colors.white, fontSize: 20),
+              ),
+            )
+          ],
+        ),
+      ),
       body: Form(
         key: _key,
         child: ListView(
@@ -83,11 +95,18 @@ class _EditKontrakState extends State<EditKontrak> {
               onSaved: (e) => vendor = e,
               decoration: InputDecoration(labelText: "Nama Vendor"),
             ),
+            SizedBox(
+              height: 20,
+            ),
             MaterialButton(
+              color: Color(0xff0066cc),
               onPressed: () {
                 check();
               },
-              child: Text("Ubah"),
+              child: Text(
+                "Ubah",
+                style: TextStyle(color: Colors.white),
+              ),
             )
           ],
         ),

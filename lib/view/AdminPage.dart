@@ -27,7 +27,7 @@ class _AdminPageState extends State<AdminPage> {
     return Scaffold(
         appBar: AppBar(
           elevation: 0.1,
-          backgroundColor: Colors.orange,
+          backgroundColor: Color(0xff3399ff),
           title: Text('Administrator Page'),
           actions: <Widget>[
             new IconButton(
@@ -56,9 +56,10 @@ class _AdminPageState extends State<AdminPage> {
                         },
                         child: new Container(
                           width: MediaQuery.of(context).size.width,
+                          padding: EdgeInsets.all(5),
                           margin: EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                              color: Colors.orangeAccent,
+                              color: Color(0xff0066cc),
                               borderRadius: BorderRadius.circular(10)),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -94,9 +95,10 @@ class _AdminPageState extends State<AdminPage> {
                         },
                         child: new Container(
                           width: MediaQuery.of(context).size.width,
+                          padding: EdgeInsets.all(5),
                           margin: EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                              color: Colors.blueAccent,
+                              color: Color(0xff0066cc),
                               borderRadius: BorderRadius.circular(10)),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -139,9 +141,10 @@ class _AdminPageState extends State<AdminPage> {
                         },
                         child: new Container(
                           width: MediaQuery.of(context).size.width,
+                          padding: EdgeInsets.all(5),
                           margin: EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                              color: Colors.redAccent,
+                              color: Color(0xff0066cc),
                               borderRadius: BorderRadius.circular(10)),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -177,9 +180,10 @@ class _AdminPageState extends State<AdminPage> {
                         },
                         child: new Container(
                           width: MediaQuery.of(context).size.width,
+                          padding: EdgeInsets.all(5),
                           margin: EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                              color: Colors.lightBlueAccent,
+                              color: Color(0xff0066cc),
                               borderRadius: BorderRadius.circular(10)),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -222,9 +226,10 @@ class _AdminPageState extends State<AdminPage> {
                         },
                         child: new Container(
                           width: MediaQuery.of(context).size.width,
+                          padding: EdgeInsets.all(5),
                           margin: EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                              color: Colors.redAccent,
+                              color: Color(0xff0066cc),
                               borderRadius: BorderRadius.circular(10)),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -248,44 +253,7 @@ class _AdminPageState extends State<AdminPage> {
                           ),
                         ),
                       )),
-                  Flexible(
-                      flex: 1,
-                      child: GestureDetector(
-                        onTap: () {
-                          // print("Container 1 clicked");
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => new DataKontrak()));
-                        },
-                        child: new Container(
-                          width: MediaQuery.of(context).size.width,
-                          margin: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                              color: Colors.lightBlueAccent,
-                              borderRadius: BorderRadius.circular(10)),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Icon(
-                                Icons.book_rounded,
-                                size: 40.0,
-                                color: Colors.white,
-                              ),
-                              SizedBox(
-                                height: 14,
-                              ),
-                              Text(
-                                "Kontrak",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ],
-                          ),
-                        ),
-                      )),
+                  
                 ],
               ),
             ),

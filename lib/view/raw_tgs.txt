@@ -1,0 +1,93 @@
+import 'package:flutter/material.dart';
+import 'package:inventory/view/DataBarang.dart';
+import 'package:inventory/view/DataKaryawan.dart';
+import 'package:inventory/view/SearchKaryawan.dart';
+
+class UserPage extends StatefulWidget {
+  final VoidCallback signOut;
+  @override
+  UserPage(this.signOut);
+  _UserPageState createState() => _UserPageState();
+}
+
+class _UserPageState extends State<UserPage> {
+  int _selectedTabIndex = 0;
+  void _onNavBarTapped(int index) {
+    setState(() {
+      _selectedTabIndex = index;
+    });
+  }
+
+  sigOut() {
+    setState(() {
+      widget.signOut();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final _listPage = <Widget>[
+      Flexible(
+          flex: 1,
+          child: GestureDetector(
+            onTap: () {
+              // print("Container 2 clicked");
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => new DataBarang()));
+            },
+            child: new Container(
+              width: MediaQuery.of(context).size.width,
+              margin: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                  color: Colors.orangeAccent,
+                  borderRadius: BorderRadius.circular(10)),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Icon(
+                    Icons.business_outlined,
+                    size: 40.0,
+                    color: Colors.white,
+                  ),
+                  SizedBox(
+                    height: 14,
+                  ),
+                  Text(
+                    "Data Barang",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+            ),
+          )),
+      Text("Halaman Favorite"),
+      Text("Halaman  Profile"),
+    ];
+
+    final _bottomNavBarItems = <BottomNavigationBarItem>[
+      BottomNavigationBarItem(icon: Icon(Icons.home), title: Text("Home")),
+      BottomNavigationBarItem(
+          icon: Icon(Icons.favorite), title: Text("Favorite")),
+      BottomNavigationBarItem(icon: Icon(Icons.person), title: Text("Profile"))
+    ];
+    final _bottomNavBar = BottomNavigationBar(
+      items: _bottomNavBarItems,
+      currentIndex: _selectedTabIndex,
+      selectedItemColor: Colors.blueAccent,
+      unselectedItemColor: Colors.grey,
+      onTap: _onNavBarTapped,
+    );
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Bottom Navigation'),
+      ),
+      body: Center(
+        child: _listPage[_selectedTabIndex],
+      ),
+      bottomNavigationBar: _bottomNavBar,
+    );
+  }
+}

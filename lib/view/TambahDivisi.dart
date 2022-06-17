@@ -57,7 +57,17 @@ class _TambahDivisiState extends State<TambahDivisi> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Color.fromRGBO(244, 244, 244, 1),
-        appBar: AppBar(),
+        appBar: AppBar(
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Container(
+                child: Text("Tambah Divisi",
+                style: TextStyle(color: Colors.white, fontSize: 20),),
+              )
+            ],
+          ),
+        ),
         body: Form(
           key: _key,
           child: ListView(
@@ -72,11 +82,14 @@ class _TambahDivisiState extends State<TambahDivisi> {
                 onSaved: (e) => nama_divisi = e,
                 decoration: InputDecoration(labelText: "Nama Divisi"),
               ),
+              SizedBox(height: 20,),
               MaterialButton(
+                color: Color(0xff0066cc),
                 onPressed: () {
                   check();
                 },
-                child: Text("Simpan"),
+                child: Text("Simpan",
+                style: TextStyle(color: Colors.white),),
               )
             ],
           ),
